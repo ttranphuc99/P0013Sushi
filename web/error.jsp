@@ -1,10 +1,9 @@
 <%-- 
-    Document   : index
-    Created on : Sep 24, 2019, 5:09:10 PM
+    Document   : error
+    Created on : Sep 24, 2019, 6:17:23 PM
     Author     : Thien Phuc
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!-- saved from url=(0034)http://us-123sushi.simplesite.com/ -->
@@ -94,7 +93,7 @@
                                         <li class=" active " style="">
                                             <a rel="nofollow" href="/P0013Sushi">Home</a>
                                         </li><li class="  " style="">
-                                            <a rel="nofollow" href="/P0013Sushi/MenuController">Menu and Price list</a>
+                                            <a rel="nofollow" href="/P0013Sushi">Menu and Price list</a>
                                         </li><li class="  " style="">
                                             <a rel="nofollow" href="/P0013Sushi">Find us</a>
                                         </li>                </ul>
@@ -111,42 +110,7 @@
                     <div class="row-fluid content-inner">
                         <div id="left" class="span9"> <!-- ADD "span12" if no sidebar, or "span9" with sidebar -->
                             <div class="wrapper ">
-                                <div class="content">
-                                    <div class="section article">
-                                        <div class="content">
-                                            <div class="img-simple span12 ">
-                                                <div class="image">
-                                                    <a rel="nofollow" data-ss="imagemodal" data-href="./resource/index/i282319414620330848._szw1280h1280_.jpg"><img src="./resource/index/i282319414620330848._szw1280h1280_.jpg"></a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <c:if test="${not empty requestScope.LIST}">
-                                        <c:forEach items="${requestScope.LIST}" var="product">
-                                            <div class="section article">
-                                                <div class="heading">
-                                                    <h3>${product.name}</h3>
-                                                </div>
-
-                                                <div class="content">
-                                                    <div class="img-simple span6 pull-left">
-                                                        <div class="image">
-                                                            <a rel="nofollow" data-ss="imagemodal" data-href="./resource/index/<c:out value="${product.image}"/>"><img src="./resource/index/<c:out value="${product.image}"/>"></a>
-                                                        </div>
-                                                    </div>
-                                                    <p><span>${product.description}</span></p>    
-                                                </div>
-                                            </div>
-                                        </c:forEach>
-                                    </c:if>
-                                    <c:if test="${empty requestScope.LIST}">
-                                        <div><font color="red">Empty product</font></div>
-                                        </c:if>
-                                </div>
-
-
+                                <font color="red">ERROR PAGE</font>
                             </div>
                         </div>
                         <div id="right" class="span3">

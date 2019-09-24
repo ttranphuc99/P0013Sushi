@@ -1,36 +1,32 @@
 <%-- 
-    Document   : index
-    Created on : Sep 24, 2019, 5:09:10 PM
+    Document   : menu
+    Created on : Sep 24, 2019, 6:23:49 PM
     Author     : Thien Phuc
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!-- saved from url=(0034)http://us-123sushi.simplesite.com/ -->
+<!-- saved from url=(0043)http://us-123sushi.simplesite.com/410908035 -->
 <html lang="en-US" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home - us-123sushi.simplesite.com</title>
+        <title>Menu and Price list - us-123sushi.simplesite.com</title>
         <meta property="og:site_name" content="The Sushi Restaurant">
         <meta property="article:publisher" content="https://www.facebook.com/simplesite">
         <meta property="og:locale" content="en-US">
-        <meta property="og:url" content="http://us-123sushi.simplesite.com/">
-        <meta property="og:title" content="24 types of sushi rolls">
-        <meta property="og:description" content="
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
-              ex ea commodo consequat. Duis autem vel eum iriur...">
-        <meta property="og:image" content="http://cdn.simplesite.com/i/eb/15/282319406464701931/i282319414620330848._szw1280h1280_.jpg">
-        <meta property="og:updated_time" content="2016-06-18T11:16:09.6870291+02:00">
+        <meta property="og:url" content="http://us-123sushi.simplesite.com/410908035">
+        <meta property="og:title" content="Menu and Price list">
+        <meta property="og:updated_time" content="2016-06-18T11:16:30.5603643+02:00">
         <meta property="og:type" content="website">
         <meta name="robots" content="nofollow">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="The Sushi Restaurant - http://us-123sushi.simplesite.com/">
-        <link rel="stylesheet" type="text/css" href="./resource/index/3627058.design.v25490.css">
-        <link rel="canonical" href="http://us-123sushi.simplesite.com/">
+        <link rel="stylesheet" type="text/css" href="./resource/menu/3627058.design.v25490.css">
+        <link rel="canonical" href="http://us-123sushi.simplesite.com/410908035">
         <link rel="shortcut icon" href="data:image/x-icon;,">
-        <script type="text/javascript" async="" src="./resource/index/analytics.js"></script><script async="" src="./resource/index/gtm.js"></script><script type="text/javascript" src="./resource/index/FrontendAppLocalePage.aspx"></script>
-        <script type="text/javascript" src="./resource/index/frontendApp.min.js"></script>
+        <script type="text/javascript" async="" src="./resource/menu/analytics.js"></script><script async="" src="./resource/menu/gtm.js"></script><script type="text/javascript" src="./resource/menu/FrontendAppLocalePage.aspx"></script>
+        <script type="text/javascript" src="./resource/menu/frontendApp.min.js"></script>
         <script type="text/javascript">if (typeof window.jQuery == "undefined") {
                 (function () {
                     var a = document.createElement("script");
@@ -54,7 +50,7 @@
                 }
             }</script>
         <style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
-    <body data-pid="410907962" data-iid="">
+    <body data-pid="410908035" data-iid="">
 
 
         <div class="container-fluid site-wrapper"> <!-- this is the Sheet -->
@@ -91,9 +87,9 @@
                                 <!-- Everything you want hidden at 940px or less, place within here -->
                                 <div class="nav-collapse collapse">
                                     <ul class="nav" id="topMenu" data-submenu="horizontal">
-                                        <li class=" active " style="">
+                                        <li class="  " style="">
                                             <a rel="nofollow" href="/P0013Sushi">Home</a>
-                                        </li><li class="  " style="">
+                                        </li><li class=" active " style="">
                                             <a rel="nofollow" href="/P0013Sushi/MenuController">Menu and Price list</a>
                                         </li><li class="  " style="">
                                             <a rel="nofollow" href="/P0013Sushi">Find us</a>
@@ -110,40 +106,42 @@
                 <div class="container">
                     <div class="row-fluid content-inner">
                         <div id="left" class="span9"> <!-- ADD "span12" if no sidebar, or "span9" with sidebar -->
-                            <div class="wrapper ">
+                            <div class="wrapper list list-prices">
+                                <div class="heading">
+                                    <h1 class="page-title">Menu and Price list</h1>
+                                </div>
+
                                 <div class="content">
-                                    <div class="section article">
-                                        <div class="content">
-                                            <div class="img-simple span12 ">
-                                                <div class="image">
-                                                    <a rel="nofollow" data-ss="imagemodal" data-href="./resource/index/i282319414620330848._szw1280h1280_.jpg"><img src="./resource/index/i282319414620330848._szw1280h1280_.jpg"></a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
                                     <c:if test="${not empty requestScope.LIST}">
-                                        <c:forEach items="${requestScope.LIST}" var="product">
-                                            <div class="section article">
-                                                <div class="heading">
-                                                    <h3>${product.name}</h3>
-                                                </div>
-
+                                        <c:forEach items="${requestScope.LIST}" var="menu">
+                                            <div class="section">
                                                 <div class="content">
-                                                    <div class="img-simple span6 pull-left">
-                                                        <div class="image">
-                                                            <a rel="nofollow" data-ss="imagemodal" data-href="./resource/index/<c:out value="${product.image}"/>"><img src="./resource/index/<c:out value="${product.image}"/>"></a>
-                                                        </div>
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>${menu.name}</th>
+                                                                <th class="align-right">Price</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>${menu.description}</td>
+                                                                <td class="align-right">€${menu.price}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <div>
+                                                        <c:forEach items="${menu.listProduct}" var="product">
+                                                            <p>${product.name}</p>
+                                                        </c:forEach>
                                                     </div>
-                                                    <p><span>${product.description}</span></p>    
                                                 </div>
                                             </div>
                                         </c:forEach>
                                     </c:if>
                                     <c:if test="${empty requestScope.LIST}">
-                                        <div><font color="red">Empty product</font></div>
-                                        </c:if>
+                                        <font color="red">Not found menu</font>
+                                    </c:if>
                                 </div>
 
 
@@ -157,9 +155,9 @@
                                     </div>
 
                                     <div class="content"><span><ul>
-                                                <li><a id="share-facebook" href="http://us-123sushi.simplesite.com/#"><i class="icon-facebook-sign"></i><span>Share on Facebook</span></a></li>
-                                                <li><a id="share-twitter" href="http://us-123sushi.simplesite.com/#"><i class="icon-twitter-sign"></i><span>Share on Twitter</span></a></li>
-                                                <li><a id="share-google-plus" href="http://us-123sushi.simplesite.com/#"><i class="icon-google-plus-sign"></i><span>Share on Google+</span></a></li>    
+                                                <li><a id="share-facebook" href="http://us-123sushi.simplesite.com/410908035#"><i class="icon-facebook-sign"></i><span>Share on Facebook</span></a></li>
+                                                <li><a id="share-twitter" href="http://us-123sushi.simplesite.com/410908035#"><i class="icon-twitter-sign"></i><span>Share on Twitter</span></a></li>
+                                                <li><a id="share-google-plus" href="http://us-123sushi.simplesite.com/410908035#"><i class="icon-google-plus-sign"></i><span>Share on Google+</span></a></li>    
                                             </ul></span></div>
                                 </div>
                             </div>
@@ -194,7 +192,7 @@
         </div>
 
 
-        <input type="hidden" id="anti-forgery-token" value="vFZIp11QDd7w1cZjYdzwVVw3rTHgQi1lpMMqomvLq/qGfx85dADIn6rd+jb5+yvdIjnIKNejlFu6vxL7J8Np5XDrvUyMasUYb8PZlmgROpWgWhFTGjCoyYPRNAZ57HUVr4c6QnvYhoYJLJG8dWLP2NhmdVJF+RhKEwkT1Q7ogGGTSddnANm69E10QsexY3DV5L0XqDr1VHHaGc7ZSxM2ktc82EJ4KYkwEXssuv2a0gNK9Zc8XKu5Ft28qiKVqNsj3YTpteTqb5UM9+U6Dtk4R+nJWQ1rw7NgjMDh9hCABmCHxgiQJBhPooojs3CleKjorvDjhc1vLhNfhEdOaEJSAXy1zHip7yoxj/Ybn86swSis7wnW/YTVdMos5ci15FQjLXy+AuwYhuwHWlhNM8crwrQgn0VA7owD6WQQ32wieNWKQ2IwXR/4mD3WbVhBV2sj4J0BAeXfZmsXAM5y9UtQeQ==">
+        <input type="hidden" id="anti-forgery-token" value="vFZIp11QDd7w1cZjYdzwVVw3rTHgQi1lpMMqomvLq/qGfx85dADIn6rd+jb5+yvdIjnIKNejlFu6vxL7J8Np5XDrvUyMasUYb8PZlmgROpWgWhFTGjCoyYPRNAZ57HUVr4c6QnvYhoYJLJG8dWLP2NhmdVJF+RhKEwkT1Q7ogGGTSddnANm69E10QsexY3DV5L0XqDr1VHHaGc7ZSxM2ktc82EJ4KYkwEXssuv2a0gNK9Zc8XKu5Ft28qiKVqNsj3YTpteTqb5UM9+U6Dtk4R+nJWQ1rw7NgjMDh9hCABmCHxgiQJBhPooojs3CleKjorvDjhc1vLhNfhEdOaEJSAXy1zHip7yoxj/Ybn86swSis7wnW/YTVdMos5ci15FQjLXy+AuwYhuwHWlhNM8crwlL8LfD8fInczpocUZB/gq+On5MuQGNWwqKf9Pt25ydY1ciKiD1Em/UU5lv75cbFPg==">
 
 
         <script>
