@@ -55,26 +55,4 @@ public class ProductDAO implements Serializable {
         }
         return result;
     }
-    
-    public ProductDTO getProductById(int id) throws Exception {
-        ProductDTO result = null;
-        try {
-            String sql = "SELECT Name, Description, Image FROM Product WHERE ID = ?";
-            conn = DBConnection.getConnection();
-            ps = conn.prepareStatement(sql);
-            ps.setInt(1, id);
-            rs = ps.executeQuery();
-            
-            if (rs.next()) {
-                String name = rs.getString("Name");
-                String description = rs.getString("Description");
-                String image = rs.getString("Image");
-                
-                result = new ProductDTO(id, name, image, description);
-            }
-        } finally {
-            closeConnection();
-        }
-        return result;
-    }
 }

@@ -8,6 +8,10 @@
         <servlet-name>MenuController</servlet-name>
         <servlet-class>phuctt.controllers.MenuController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ContactController</servlet-name>
+        <servlet-class>phuctt.controllers.ContactController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductListController</servlet-name>
         <url-pattern>/ProductListController</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>MenuController</servlet-name>
         <url-pattern>/MenuController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContactController</servlet-name>
+        <url-pattern>/ContactController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

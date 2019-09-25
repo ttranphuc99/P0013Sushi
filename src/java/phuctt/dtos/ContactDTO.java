@@ -12,15 +12,18 @@ import java.io.Serializable;
  * @author Thien Phuc
  */ 
 public class ContactDTO implements Serializable {
-    private String address, tel, email;
+    private String address, tel, email, image;
+    private int id;
 
     public ContactDTO() {
     }
 
-    public ContactDTO(String address, String tel, String email) {
+    public ContactDTO(String address, String tel, String email, String image, int id) {
         this.address = address;
         this.tel = tel;
         this.email = email;
+        this.image = image;
+        this.id = id;
     }
 
     public String getAddress() {
@@ -46,6 +49,24 @@ public class ContactDTO implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
     
     
 }

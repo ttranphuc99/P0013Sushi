@@ -96,7 +96,7 @@
                                         </li><li class="  " style="">
                                             <a rel="nofollow" href="/P0013Sushi/MenuController">Menu and Price list</a>
                                         </li><li class="  " style="">
-                                            <a rel="nofollow" href="/P0013Sushi">Find us</a>
+                                            <a rel="nofollow" href="/P0013Sushi/ContactController">Find us</a>
                                         </li>                </ul>
                                 </div>
                             </div>

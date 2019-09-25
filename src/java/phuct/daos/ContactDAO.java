@@ -5,19 +5,18 @@
  */
 package phuct.daos;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 import phuctt.db.DBConnection;
-import phuctt.dtos.ProductDTO;
+import phuctt.dtos.ContactDTO;
 
 /**
  *
  * @author Thien Phuc
  */
-public class MenuDetailDAO {
+public class ContactDAO implements Serializable {
     private Connection conn;
     private PreparedStatement ps;
     private ResultSet rs;
@@ -28,30 +27,25 @@ public class MenuDetailDAO {
         if (conn != null) conn.close();
     }
     
-    public List<ProductDTO> getListProductOfMenu(int menuId) throws Exception {
-        List<ProductDTO> result = null;
+    public ContactDTO getContact() throws Exception {
+        ContactDTO dto = null;
         try {
-            String sql = "SELECT ProductID FROM MenuDetail WHERE MenuID = ?";
+            String sql = "SELECT Address, Tel, Email, Image FROM Contact";
             conn = DBConnection.getConnection();
             ps = conn.prepareStatement(sql);
-            ps.setInt(1, menuId);
             rs = ps.executeQuery();
             
-            int productID;
-            ProductDTO product;
-            
-            ProductDAO productDao = new ProductDAO();
-            
-            result = new ArrayList<>();
-            
-            while (rs.next()) {
-                productID = rs.getInt("ProductID");
-                product = productDao.getProductById(productID);
-                result.add(product);
+            if (rs.next()) {
+                String address = rs.getString("Address");
+                String tel = rs.getString("Tel");
+                String email = rs.getString("Email");
+                String image = rs.getString("Image");
+                
+                dto = new ContactDTO(address, tel, email, image, 0);
             }
         } finally {
             closeConnection();
         }
-        return result;
+        return dto;
     }
 }

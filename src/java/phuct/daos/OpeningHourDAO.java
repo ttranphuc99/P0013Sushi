@@ -5,20 +5,17 @@
  */
 package phuct.daos;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 import phuctt.db.DBConnection;
-import phuctt.dtos.MenuDTO;
-import phuctt.dtos.ProductDTO;
 
 /**
  *
  * @author Thien Phuc
  */
-public class MenuDAO {
+public class OpeningHourDAO implements Serializable {
     private Connection conn;
     private PreparedStatement ps;
     private ResultSet rs;
@@ -29,34 +26,21 @@ public class MenuDAO {
         if (conn != null) conn.close();
     }
     
-    public List<MenuDTO> getList() throws Exception {
-        List<MenuDTO> result = null;
+    public String getOpeingHourDes(String weekDay) throws Exception {
+        String description = null;
         try {
-            String sql = "SELECT ID, Name, Description, Price FROM Menu";
+            String sql = "SELECT Description FROM OpeningHour WHERE WeekDay = ?";
             conn = DBConnection.getConnection();
             ps = conn.prepareStatement(sql);
+            ps.setString(1, weekDay);
             rs = ps.executeQuery();
             
-            String name, description;
-            int id;
-            float price;
-            MenuDTO dto;            
-            result = new ArrayList<>();
-            
-            while (rs.next()) {
-                name = rs.getString("Name");
+            if (rs.next()) {
                 description = rs.getString("Description");
-                price = rs.getFloat("Price");
-                id = rs.getInt("ID");
-                
-                dto = new MenuDTO(id, name, description, price);
-                
-                result.add(dto);
             }
-           
         } finally {
             closeConnection();
         }
-        return result;
+        return description;
     }
 }

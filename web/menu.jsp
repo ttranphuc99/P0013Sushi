@@ -92,7 +92,7 @@
                                         </li><li class=" active " style="">
                                             <a rel="nofollow" href="/P0013Sushi/MenuController">Menu and Price list</a>
                                         </li><li class="  " style="">
-                                            <a rel="nofollow" href="/P0013Sushi">Find us</a>
+                                            <a rel="nofollow" href="/P0013Sushi/ContactController">Find us</a>
                                         </li>                </ul>
                                 </div>
                             </div>
@@ -113,28 +113,27 @@
 
                                 <div class="content">
                                     <c:if test="${not empty requestScope.LIST}">
-                                        <c:forEach items="${requestScope.LIST}" var="menu">
+                                        <c:forEach items="${requestScope.LIST}" var="menu" varStatus="st">
                                             <div class="section">
                                                 <div class="content">
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th>${menu.name}</th>
+                                                                <th>Menu ${st.count}</th>
                                                                 <th class="align-right">Price</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td>${menu.description}</td>
+                                                                <td>${menu.name}</td>
                                                                 <td class="align-right">€${menu.price}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>${menu.description}</td>
+                                                                
                                                             </tr>
                                                         </tbody>
                                                     </table>
-                                                    <div>
-                                                        <c:forEach items="${menu.listProduct}" var="product">
-                                                            <p>${product.name}</p>
-                                                        </c:forEach>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </c:forEach>
