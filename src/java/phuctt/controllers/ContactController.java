@@ -41,13 +41,13 @@ public class ContactController extends HttpServlet {
             request.setAttribute("CONTACT", contact);
             
             OpeningHourDAO openingHourDao = new OpeningHourDAO();
-            request.setAttribute("MONDAY", openingHourDao.getOpeingHourDes("Monday"));
-            request.setAttribute("TUESDAY", openingHourDao.getOpeingHourDes("Tuesday"));
-            request.setAttribute("WEDNESDAY", openingHourDao.getOpeingHourDes("Wednesday"));
-            request.setAttribute("THURSDAY", openingHourDao.getOpeingHourDes("Thursday"));
-            request.setAttribute("FRIDAY", openingHourDao.getOpeingHourDes("Friday"));
-            request.setAttribute("SATURDAY", openingHourDao.getOpeingHourDes("Saturday"));
-            request.setAttribute("SUNDAY", openingHourDao.getOpeingHourDes("Sunday"));
+            request.setAttribute("MONDAY", openingHourDao.getOpeningHourDes("Monday"));
+            request.setAttribute("TUESDAY", openingHourDao.getOpeningHourDes("Tuesday"));
+            request.setAttribute("WEDNESDAY", openingHourDao.getOpeningHourDes("Wednesday"));
+            request.setAttribute("THURSDAY", openingHourDao.getOpeningHourDes("Thursday"));
+            request.setAttribute("FRIDAY", openingHourDao.getOpeningHourDes("Friday"));
+            request.setAttribute("SATURDAY", openingHourDao.getOpeningHourDes("Saturday"));
+            request.setAttribute("SUNDAY", openingHourDao.getOpeningHourDes("Sunday"));
             
             url = CONTACT;
         } catch (Exception e) {

@@ -26,7 +26,7 @@ public class OpeningHourDAO implements Serializable {
         if (conn != null) conn.close();
     }
     
-    public String getOpeingHourDes(String weekDay) throws Exception {
+    public String getOpeningHourDes(String weekDay) throws Exception {
         String description = null;
         try {
             String sql = "SELECT Description FROM OpeningHour WHERE WeekDay = ?";
